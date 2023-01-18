@@ -1,0 +1,145 @@
+<?php
+  get_header(); 
+?>
+
+<section class="section section_photos">
+
+    <aside class="container-cart_button">
+        <button class="cart_button">
+            Cart
+        </button>
+    </aside>
+
+    <article class="container-cart">
+        <button class="close_cart_button">x</button>
+        <ul class="list-container"></ul>
+        
+    </article>
+
+    <article class="container-main_products">
+        <div class="main_products">
+<?php
+
+
+if($_POST){
+
+    global $wpdb;
+    $query = $wpdb->prepare("SELECT * FROM {$wpdb->prefix}fbv WHERE NAME = '{$_POST['foldername']}'");
+    $folders = $wpdb->get_results($query);
+
+    if($folders) {
+
+            //fetch and show main products available
+
+
+            $mainProducts = new WP_Query(array(
+                'post_type' => 'Main Products',
+                'posts_per_page' => -1,
+                ));
+
+            
+
+                while ($mainProducts->have_posts()) {
+
+                    $mainProducts->the_post(); ?>
+                    
+                    <div><span class="single_main_product"><?php echo get_the_title(); ?>: R<?php echo get_field('Price'); ?>  </span> <button class="add_main_product_to_cart">add</button></div>
+                    
+                    <?php
+                };
+
+                ?>
+        </div>
+    </article>
+    <article class="container-other_products ">
+                <button class="close_product_button">x</button>
+            <?php
+
+            //fetch and show other products available
+
+            $otherProducts = new WP_Query(array(
+            'post_type' => 'Other Products',
+            'posts_per_page' => -1,
+            ));
+            $id = 0;
+            while($otherProducts->have_posts()){
+                 
+                $otherProducts->the_post(); ?>
+                    
+                    <div> <span class="single_other_product"><?php echo get_the_title(); ?> R<?php echo get_field('Price'); ?></span> <?php the_ID(); ?>  <button class="add_other_product_to_cart">add</button></div>
+
+                <?php
+               $id = $id++;
+
+            }
+
+            ?>
+
+    </article>
+    <article class="container-photos">
+            <div class="photos">
+
+
+
+                <?php
+
+            //fetch and display images
+
+            $id = $folders[0]->id;
+
+            $query = $wpdb->prepare("SELECT attachment_id FROM {$wpdb->prefix}fbv_attachment_folder where folder_id = {$id}");
+
+            $all_folders_ids = $wpdb->get_results($query);
+
+            $image_args = array(
+                    'post_type' => 'attachment',
+                    'post_status' => 'inherit',
+                    'posts_per_page' => -1,
+                    'orderby' => 'rand',
+                );
+
+            $all_images = new WP_Query($image_args);
+
+            $sizeofarray = sizeof($all_folders_ids);
+
+            for ($i = 0; $i < $sizeofarray; $i++) {
+
+                $post = wp_get_attachment_image_src($all_folders_ids[$i]->attachment_id);
+                                
+                ?>
+                    <span  class="photos-single"> <img id= '<?php $i ?>' class="img-single" alt="1" src=<?php echo $post[0] ?>  /> <button id=<?php echo $i ?> class="product_button">product</button> </span>
+                <?php
+            }
+    }
+    ?>
+            </div>
+    </article>
+
+    <article>
+
+    </article>
+    
+    <?php
+}
+
+else {
+    ?>
+
+        <div>No Photos</div>
+    
+    <?php
+}
+
+
+
+
+
+
+?>
+
+</section>
+ 
+
+<?php
+  get_footer();
+?>

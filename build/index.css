@@ -7,6 +7,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #e0e0e0;
 }
 
 a {
@@ -16,7 +17,30 @@ a {
 
 * {
   box-sizing: border-box;
-  border: 1px solid black;
+}
+
+img {
+  z-index: 1;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+li {
+  font-size: 1.5rem;
+  border-bottom: 1px solid grey;
+}
+
+li span {
+  margin-left: 12%;
+}
+
+li img {
+  width: 35%;
 }
 
 .section {
@@ -59,6 +83,10 @@ input {
   width: 10%;
 }
 
+.container-cart_button {
+  margin-left: 42%;
+}
+
 .container-main_products {
   grid-column: span 4;
   margin-top: 5%;
@@ -67,21 +95,38 @@ input {
 .main_products {
   display: grid;
   grid-template-columns: 20vw 20vw 20vw 20vw;
-  -moz-column-gap: 2vw;
-       column-gap: 2vw;
+  -moz-column-gap: 5vw;
+       column-gap: 5vw;
+  padding-left: 5%;
+}
+
+.container-single_main_product {
+  grid-column: span 2;
+  margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: white;
 }
 
 .single_main_product {
-  grid-column: span 1;
+  width: 60%;
+}
+
+.add_main_product_to_cart {
+  margin-left: 10px;
+  width: 70%;
 }
 
 .container-other_products {
   display: none;
   left: 0;
   right: 0;
-  margin: 40vh auto;
-  width: 50%;
-  background-color: rgba(255, 255, 255, 1);
+  margin: 30vh auto;
+  width: 90vw;
+  z-index: 2;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: white;
 }
 
 .show-other_products_modal {
@@ -89,9 +134,21 @@ input {
   position: absolute;
 }
 
+.close_product_button {
+}
+
+.container-single_other_product {
+  background-color: white;
+  text-align: center;
+}
+
+.single_other_product {
+  font-size: 2rem;
+}
+
 .container-photos {
   grid-column: span 4;
-  margin: 2% auto 0 auto;
+  margin: 10% auto 0 auto;
 }
 
 .photos {
@@ -103,28 +160,133 @@ input {
 }
 
 .photos-single {
-  grid-column: span 1;
+  grid-column: span 3;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: white;
 }
 
 .img-single {
-  height: 100%;
-  width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  padding-left: 10px;
 }
 
 .container-cart {
   display: none;
   left: 0;
   right: 0;
-  margin: 40vh auto;
-  width: 50%;
+  margin: 30vh auto;
+  width: 90vw;
   background-color: rgba(255, 255, 255, 1);
+  z-index: 2;
+  text-align: right;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .show-cart {
   display: block;
   position: absolute;
+}
+
+#cart-total {
+  font-size: 2rem;
+  padding-right: 10%;
+}
+
+/* medium: 700px
+  large: 900px
+  xlarge: 1440px */
+
+/* tablet */
+
+@media screen and (min-width: 700px) {
+  .main_products {
+    -moz-column-gap: 3vw;
+         column-gap: 3vw;
+    padding-left: 0;
+  }
+
+  .add_main_product_to_cart {
+    margin-left: 10px;
+    width: 50%;
+  }
+
+  .container-other_products {
+    width: 60vw;
+  }
+
+  .container-cart {
+    width: 70vw;
+  }
+
+  .photos-single {
+    grid-column: span 2;
+  }
+}
+
+/* big laptops */
+
+@media screen and (min-width: 900px) {
+  .main_products {
+    -moz-column-gap: 0;
+         column-gap: 0;
+  }
+
+  .container-other_products {
+    width: 40vw;
+  }
+
+  .container-cart {
+    width: 50vw;
+  }
+
+  .photos-single {
+    grid-column: span 2;
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .main_products {
+    display: grid;
+    grid-template-columns: 20vw 20vw 20vw 20vw;
+    -moz-column-gap: 5vw;
+         column-gap: 5vw;
+    padding-left: 5%;
+  }
+
+  .container-single_main_product {
+    grid-column: span 1;
+  }
+
+  .photos {
+    grid-template-columns: 16vw 16vw 16vw 16vw;
+    -moz-column-gap: 2vw;
+         column-gap: 2vw;
+  }
+
+  .container-other_products {
+    width: 30vw;
+  }
+
+  .container-cart {
+    width: 40vw;
+  }
+
+  .photos-single {
+    grid-column: span 1;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .main_products {
+    -moz-column-gap: 0;
+         column-gap: 0;
+  }
+
+  .photos-single {
+    grid-column: span 1;
+  }
 }
 
 

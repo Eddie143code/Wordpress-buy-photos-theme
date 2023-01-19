@@ -11,7 +11,8 @@
     </aside>
 
     <article class="container-cart">
-        <button class="close_cart_button">x</button>
+        <div style="text-align: left"><button class="close_cart_button">X</button></div>
+
         <ul class="list-container"></ul>
         
     </article>
@@ -43,7 +44,7 @@ if($_POST){
 
                     $mainProducts->the_post(); ?>
                     
-                    <div><span class="single_main_product"><?php echo get_the_title(); ?>: R<?php echo get_field('Price'); ?>  </span> <button class="add_main_product_to_cart">add</button></div>
+                    <div class="container-single_main_product"><span class="single_main_product"><?php echo get_the_title(); ?>: R<?php echo get_field('Price'); ?>  </span> <button class="add_main_product_to_cart">add</button></div>
                     
                     <?php
                 };
@@ -52,7 +53,7 @@ if($_POST){
         </div>
     </article>
     <article class="container-other_products ">
-                <button class="close_product_button">x</button>
+                <button class="close_product_button">X</button>
             <?php
 
             //fetch and show other products available
@@ -66,7 +67,7 @@ if($_POST){
                  
                 $otherProducts->the_post(); ?>
                     
-                    <div> <span class="single_other_product"><?php echo get_the_title(); ?> R<?php echo get_field('Price'); ?></span> <?php the_ID(); ?>  <button class="add_other_product_to_cart">add</button></div>
+                    <div class="container-single_other_product"> <span class="single_other_product"><?php echo get_the_title(); ?>: R<?php echo get_field('Price'); ?></span> <button class="add_other_product_to_cart">add</button></div>
 
                 <?php
                $id = $id++;

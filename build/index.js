@@ -29,6 +29,9 @@ class ProductModal {
     this.cartList = document.querySelector(".list-container");
     this.cartButton = document.querySelector(".cart_button");
     this.addOtherProductToCart = document.querySelectorAll(".add_other_product_to_cart");
+    this.payoutButton = document.querySelector(".payout_button");
+    this.paymentModal = document.querySelector(".payment_modal");
+    this.closePaymentModal = document.querySelector(".close_payment_form");
     this.events();
   }
 
@@ -47,7 +50,6 @@ class ProductModal {
     this.closeCartButton.addEventListener("click", e => this.clickCart(e));
 
     // adds a click event to add an other product to the cart
-
     this.addOtherProductToCart.forEach((e, i) => {
       e.addEventListener("click", e => {
         e.target.id = i;
@@ -60,6 +62,10 @@ class ProductModal {
         this.add_main_product_to_cart(e);
       });
     });
+
+    // add a click event to payout button
+    this.payoutButton.addEventListener("click", () => this.paymentModal.classList.add("show_payment_modal"));
+    this.closePaymentModal.addEventListener("click", () => this.paymentModal.classList.remove("show_payment_modal"));
   }
   clickProduct(e) {
     // checks if produt modal is already shown and then removes it, and if not it shows the product modal

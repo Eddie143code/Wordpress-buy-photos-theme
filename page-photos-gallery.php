@@ -14,7 +14,35 @@
         <div style="text-align: left"><button class="close_cart_button">X</button></div>
 
         <ul class="list-container"></ul>
-        
+        <button class="payout_button">Payout</button>    
+    </article>
+
+    <article class="payment_modal">
+        <form class="payment-form" method="post">
+            <div class="flex-container">
+                <div class="flex-item_1"><span>Edit payment method</span></div>
+                <div class="flex-item_2"><button type="button" class="close_payment_form">X</button></div>
+            </div>
+
+            <div><label for="card-holder-input">Card Holder</label></div>
+            <div><input type="text" name="card-holder-input"></div>
+
+            <div><label for="card-number">Credit/debit card number</label></div>
+            <div><input type="text" name="card-number"></div>
+            
+            <div class="flex-form">
+                <div><label class="date-cvc" for="expiration-date">Expiration month and year</label><input type="text" name="expiration-date"> </div>
+                <div><label class="date-cvc" for="CVC">CVC</label><input type="text" name="CVC"></div>
+            </div>
+            
+
+
+            <input type="hidden" name="merchant_id" value="">
+            <input type="hidden" name="merchant_key" value="">
+            <input type="hidden" name="amount" value="">
+            <input type="hidden" name="item_name" value="Test Product">
+            <input type="submit">
+        </form>
     </article>
 
     <article class="container-main_products">

@@ -12,5 +12,8 @@
   "description": "",
   "devDependencies": {
     "@wordpress/scripts": "^25.1.0"
+  },
+  "dependencies": {
+    "axios": "^1.2.3"
   }
 }

@@ -1,3 +1,5 @@
+import axios from "axios";
+
 class ProductModal {
   // constructor
   constructor() {
@@ -23,6 +25,9 @@ class ProductModal {
     this.payoutButton = document.querySelector(".payout_button");
     this.paymentModal = document.querySelector(".payment_modal");
     this.closePaymentModal = document.querySelector(".close_payment_form");
+    this.submitPaymentButton = document.querySelector(".submit_payment_form");
+
+    axios.defaults.headers.common["X-WP-Nonce"] = websiteData.nonce;
 
     this.events();
   }
@@ -60,14 +65,20 @@ class ProductModal {
       });
     });
 
-    // add a click event to payout button
+    // add a click event to open the payment modal
     this.payoutButton.addEventListener("click", () =>
       this.paymentModal.classList.add("show_payment_modal")
     );
 
+    // add a click event to close the payment modal
     this.closePaymentModal.addEventListener("click", () =>
       this.paymentModal.classList.remove("show_payment_modal")
     );
+
+    // add a click event to submit the payment form
+    this.submitPaymentButton.addEventListener("click", () => {
+      this.post_order_to_db();
+    });
   }
 
   clickProduct(e) {
@@ -235,6 +246,29 @@ class ProductModal {
     totalDiv.innerHTML = `TOTAL: R${total}`;
     totalDiv.id = "cart-total";
     this.cartModal.append(totalDiv);
+  }
+
+  post_order_to_db(e) {
+    const date = new Date();
+    let ourNewPost = {
+      title: date,
+      content: document.querySelector(".container-cart").innerHTML,
+      status: "draft",
+    };
+
+    const post = async () => {
+      try {
+        const response = await axios.post(
+          websiteData.root_url + "/wp-json/wp/v2/orders",
+          ourNewPost
+        );
+        console.log("successful post");
+      } catch (error) {
+        console.log("failed to post");
+      }
+    };
+
+    post();
   }
 
   // methods

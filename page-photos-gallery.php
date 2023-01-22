@@ -2,7 +2,7 @@
   get_header(); 
 ?>
 
-<section class="section section_photos">
+<section id="photo-page" class="section section_photos">
 
     <aside class="container-cart_button">
         <button class="cart_button">
@@ -18,10 +18,10 @@
     </article>
 
     <article class="payment_modal">
-        <form class="payment-form" method="post">
+        <form class="payment-form" action="/photos-input" method="post">
             <div class="flex-container">
                 <div class="flex-item_1"><span>Edit payment method</span></div>
-                <div class="flex-item_2"><button type="button" class="close_payment_form">X</button></div>
+                <div class="flex-item_2"><button type="button" class="close_payment_form flex-button">X</button></div>
             </div>
 
             <div><label for="card-holder-input">Card Holder</label></div>
@@ -41,7 +41,7 @@
             <input type="hidden" name="merchant_key" value="">
             <input type="hidden" name="amount" value="">
             <input type="hidden" name="item_name" value="Test Product">
-            <input type="submit">
+            <input class="submit_payment_form" type="submit">
         </form>
     </article>
 

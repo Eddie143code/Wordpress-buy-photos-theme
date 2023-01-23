@@ -1,3 +1,5 @@
+@import "images.css";
+
 html,
 body {
   padding: 0;
@@ -41,13 +43,10 @@ li img {
 }
 
 .section {
-  margin: 0 auto;
-  height: 90vh;
-  width: 90vw;
   display: grid;
-  grid-template-columns: 20vw 20vw 20vw 20vw;
-  column-gap: 2vw;
-  flex-grow: 1;
+  min-height: 96.5vh;
+  min-width: 99.9vw;
+  justify-content: center;
 }
 
 .section_photos {
@@ -55,11 +54,19 @@ li img {
 }
 
 .heading {
-  grid-column: 2/4;
+  margin-top: 30%;
+  height: 20%;
+  background-color: rgba(255, 255, 255, 60%);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   text-align: center;
+  border-radius: 10px;
 }
 
-.photos_input_form {
+.heading-front {
+  font-size: 4rem;
+}
+
+.link-front .photos_input_form {
   height: 10%;
   width: 100%;
   margin-top: 20%;
@@ -73,7 +80,7 @@ li img {
 
 .submit {
   font-size: 1rem;
-  width: 10%;
+  width: 20%;
 }
 
 .container-cart_button {
@@ -341,5 +348,43 @@ li img {
 
   .photos-single {
     grid-column: span 1;
+  }
+}
+
+/* CSS */
+.link-front-page {
+  background-color: rgba(255, 255, 255, 60%);
+  border: 0 solid #e2e8f0;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: #0d172a;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Basier circle", -apple-system, system-ui, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 1rem 1.6rem;
+  text-align: center;
+  text-decoration: none #0d172a solid;
+  text-decoration-thickness: auto;
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-top: 10%;
+}
+
+.link-front-page:hover {
+  background-color: rgba(255, 255, 255, 90%);
+}
+
+@media (min-width: 768px) {
+  .link-front-page {
+    font-size: 1.125rem;
+    padding: 1rem 2rem;
   }
 }

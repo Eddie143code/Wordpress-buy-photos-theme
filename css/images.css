@@ -1,0 +1,11 @@
+.hero-photo {
+  background-image: url("./images/pexels-tirachard-kumtanom-733853.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.gallery-photo {
+  background-image: url("./images/pexels-fwstudio-164005.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}

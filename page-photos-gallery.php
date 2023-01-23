@@ -2,7 +2,7 @@
   get_header(); 
 ?>
 
-<section id="photo-page" class="section section_photos">
+<section id="photo-page" class="section section_photos  gallery-photo">
 
     <aside class="container-cart_button">
         <button class="cart_button">

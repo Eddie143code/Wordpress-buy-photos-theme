@@ -156,8 +156,8 @@ class ProductModal {
       });
       deleteButton.id = Number(this.cartItems.length) + 1;
     }
-    item.append(deleteButton);
     item.append(product);
+    item.append(deleteButton);
     this.cartList.append(item);
     console.log(this.cartItems);
     let totalDiv = document.createElement("div");

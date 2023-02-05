@@ -7,5 +7,21 @@
         </head>
         <body <?php body_class(); ?>>
             <header>
+                <nav class="nav">
+                    <div class="nav-center">
+                        <ul>
+                            <li style="width:fit-content">
+                                <a href="http://esteproject.local/">Home</a>
+                            </li>
+                            <li>
+                                <a href="http://esteproject.local/photos">See my work</a>
+                            </li>
+                            <li >
+                                <a href="http://esteproject.local/photos-input">Buy your photos</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
                 
             </header>

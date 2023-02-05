@@ -46,23 +46,75 @@ li img {
   display: grid;
   min-height: 96.5vh;
   min-width: 99.9vw;
+}
+.section-input {
+  display: grid;
+  min-height: 96.5vh;
+  min-width: 99.9vw;
   justify-content: center;
+  align-items: center;
 }
 
 .section_photos {
   height: auto;
 }
 
-.heading {
-  margin-top: 30%;
+.heading-input {
+  margin-bottom: 20%;
   height: 20%;
-  background-color: rgba(255, 255, 255, 60%);
+  background-color: rgba(255, 255, 255, 95%);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   text-align: center;
   border-radius: 10px;
 }
 
-.heading-front {
+.heading {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading p {
+  margin-bottom: 20%;
+}
+
+.nav {
+  height: 5rem;
+  background-color: rgb(237, 234, 222);
+  align-items: center;
+}
+
+.nav-center {
+  width: 100%;
+  height: 100%;
+}
+
+.nav-center ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  height: 100%;
+  width: 100%;
+}
+
+.nav-center ul li {
+  text-decoration: none;
+  border-bottom: none;
+  font-size: 1.1rem;
+}
+
+.nav-center ul li a:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.heading h1 {
   font-size: 4rem;
 }
 
@@ -93,10 +145,12 @@ li img {
 }
 
 .main_products {
+  grid-column: span 2;
   display: grid;
   grid-template-columns: 20vw 20vw 20vw 20vw;
   column-gap: 5vw;
-  padding-left: 5%;
+  justify-content: center;
+  align-items: center;
 }
 
 .container-single_main_product {
@@ -312,11 +366,10 @@ li img {
     display: grid;
     grid-template-columns: 20vw 20vw 20vw 20vw;
     column-gap: 5vw;
-    padding-left: 5%;
   }
 
   .container-single_main_product {
-    grid-column: span 1;
+    grid-column: span 2;
   }
 
   .photos {
@@ -353,7 +406,7 @@ li img {
 
 /* CSS */
 .link-front-page {
-  background-color: rgba(255, 255, 255, 60%);
+  background-color: rgba(255, 255, 255, 95%);
   border: 0 solid #e2e8f0;
   border-radius: 1.5rem;
   box-sizing: border-box;
@@ -379,7 +432,7 @@ li img {
 }
 
 .link-front-page:hover {
-  background-color: rgba(255, 255, 255, 90%);
+  background-color: rgba(255, 255, 255, 80%);
 }
 
 @media (min-width: 768px) {

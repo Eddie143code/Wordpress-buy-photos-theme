@@ -7,10 +7,30 @@
   background-repeat: no-repeat;
 }
 
+.my-work-photos {
+  background-image: url(images/pexels-tirachard-kumtanom-733853.27948f0f.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  grid-template-columns: 1fr;
+}
+
 .gallery-photo {
   background-image: url(images/pexels-fwstudio-164005.d6a81e3a.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.album-link div {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 900px) {
+  .my-work-photos {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 /*!******************************************************************************************************************************************************************!*\
@@ -32,10 +52,11 @@ a {
 
 * {
   box-sizing: border-box;
+  border: 1px solid black;
 }
 
 img {
-  z-index: 1;
+  z-index: 3;
 }
 
 ul {
@@ -99,12 +120,21 @@ li img {
 .nav {
   height: 5rem;
   background-color: rgb(237, 234, 222);
-  align-items: center;
 }
 
 .nav-center {
-  width: 100%;
+  margin: 0 auto;
+  max-width: 1170px;
   height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-header div {
+  font-size: 2rem;
+  font-weight: 600;
 }
 
 .nav-center ul {
@@ -113,7 +143,7 @@ li img {
   justify-content: center;
   align-items: center;
   gap: 5%;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 600;
   text-decoration: none;
   height: 100%;
@@ -144,6 +174,47 @@ li img {
   font-size: 1.4rem;
   height: 40%;
   width: 30%;
+}
+
+.album-link-container {
+  width: 100%;
+}
+
+.album-link {
+  width: 100%;
+  cursor: pointer;
+}
+
+.album-link div {
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.album-description {
+  background-color: rgba(255, 255, 255, 80%);
+  margin-top: 10%;
+  width: 100%;
+  height: 50vh;
+}
+
+.album-description h3 {
+  cursor: pointer;
+  text-align: center;
+  font-size: 2rem;
+  width: 100%;
+  height: 8vh;
+}
+
+.album-description p {
+  margin: 0 auto;
+  margin: 1rem;
+  width: 90%;
+}
+
+.album-description div {
+  text-align: center;
+  width: 100%;
 }
 
 .submit {
@@ -311,6 +382,17 @@ li img {
 /* tablet */
 
 @media screen and (min-width: 700px) {
+  .album-link-container {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .album-description {
+    margin: 5% auto 0 auto;
+    width: 80%;
+    height: 50vh;
+  }
+
   .main_products {
     -moz-column-gap: 3vw;
          column-gap: 3vw;
@@ -358,6 +440,22 @@ li img {
 /* big laptops */
 
 @media screen and (min-width: 900px) {
+  .album-link-container {
+    width: 60%;
+    height: 40%;
+    margin: 5% auto;
+  }
+
+  .album-description {
+    margin: 8% auto 0 auto;
+    height: 40%;
+    width: 40%;
+  }
+
+  .album-description p {
+    font-size: 0.8rem;
+  }
+
   .main_products {
     -moz-column-gap: 0;
          column-gap: 0;
@@ -378,6 +476,15 @@ li img {
   .photos-single {
     grid-column: span 2;
     width: 70%;
+  }
+
+  .nav-header div {
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+
+  .nav-center ul {
+    font-size: 1rem;
   }
 }
 
@@ -462,8 +569,8 @@ li img {
 
 @media (min-width: 768px) {
   .link-front-page {
-    font-size: 1.125rem;
-    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    padding: 2.5rem 4.5rem;
   }
 }
 

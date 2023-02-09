@@ -1,18 +1,18 @@
 .hero-photo {
-  background-image: url("./images-css/pexels-andre-furtado-1264210.jpg");
+  background-image: url("./images-for-css/pexels-andre-furtado-1264210.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .my-work-photos {
-  background-image: url("./images-css/pexels-tirachard-kumtanom-733853.jpg");
+  background-image: url("./images-for-css/pexels-tirachard-kumtanom-733853.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   grid-template-columns: 1fr;
 }
 
 .gallery-photo {
-  background-image: url("./images-css/pexels-fwstudio-164005.jpg");
+  background-image: url("./images-for-css/pexels-fwstudio-164005.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }

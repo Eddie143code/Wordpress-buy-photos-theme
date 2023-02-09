@@ -52,7 +52,6 @@ a {
 
 * {
   box-sizing: border-box;
-  border: 1px solid black;
 }
 
 img {
@@ -185,12 +184,6 @@ li img {
   cursor: pointer;
 }
 
-.album-link div {
-  width: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
 .album-description {
   background-color: rgba(255, 255, 255, 80%);
   margin-top: 10%;
@@ -215,6 +208,22 @@ li img {
 .album-description div {
   text-align: center;
   width: 100%;
+}
+
+.joel-wedding {
+  min-height: 96.5vh;
+  min-width: 99.9vw;
+  display: grid;
+  grid-template-columns: auto;
+  place-items: center;
+}
+
+.joel-wedding div {
+  place-items: center;
+  height: 25vh;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .submit {
@@ -393,6 +402,14 @@ li img {
     height: 50vh;
   }
 
+  .joel-wedding {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .joel-wedding div {
+    margin-left: 5%;
+  }
+
   .main_products {
     -moz-column-gap: 3vw;
          column-gap: 3vw;
@@ -447,13 +464,17 @@ li img {
   }
 
   .album-description {
-    margin: 8% auto 0 auto;
+    margin: 5% auto 0 auto;
     height: 40%;
-    width: 40%;
+    width: 80%;
   }
 
   .album-description p {
     font-size: 0.8rem;
+  }
+
+  .joel-wedding {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .main_products {

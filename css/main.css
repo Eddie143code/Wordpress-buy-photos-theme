@@ -205,16 +205,15 @@ li img {
 }
 
 .main_products {
-  grid-column: span 2;
   display: grid;
-  grid-template-columns: 20vw 20vw 20vw 20vw;
-  column-gap: 5vw;
+  grid-template-columns: 20vw 20vw;
+  row-gap: 40px;
   justify-content: center;
   align-items: center;
 }
 
 .container-single_main_product {
-  grid-column: span 2;
+  grid-column: span 1;
   margin: 0 auto;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -373,8 +372,8 @@ li img {
   }
 
   .main_products {
-    column-gap: 3vw;
     padding-left: 0;
+    grid-column: span 1;
   }
 
   .add_main_product_to_cart {
@@ -436,10 +435,6 @@ li img {
 
   .joel-wedding {
     grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  .main_products {
-    column-gap: 0;
   }
 
   .container-other_products {

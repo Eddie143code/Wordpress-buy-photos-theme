@@ -1,12 +1,14 @@
-<?php
-  get_header(); 
-?>
+<div class=" gallery-photo">
+    <?php
+    get_header(); 
+    ?>
 
-<section id="photo-page" class="section section_photos gallery-photo">
+<section id="photo-page" class="section section_photos">
+
 
     <aside class="container-cart_button">
-        <button class="cart_button">
-            Cart
+        <button  class="cart_button cart-image">
+
         </button>
     </aside>
 
@@ -172,3 +174,6 @@ else {
 <?php
   get_footer();
 ?>
+
+</div>
+

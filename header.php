@@ -10,7 +10,7 @@
                 <nav class="nav">
                     <div class="nav-center">
                         <div class="nav-header">
-                            <div>Jane Doe</div>
+                            <div> <a href="http://esteproject.local/">Jane Doe</a> </div>
                         </div>
                         <ul>
                             <li style="width:fit-content">
@@ -24,7 +24,5 @@
                             </li>
                         </ul>
                     </div>
-                </nav>
-
-                
+                </nav>           
             </header>

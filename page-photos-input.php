@@ -1,8 +1,8 @@
 
-
+<?php get_header(); ?>
 
 <section class="hero-photo">
-<?php get_header(); ?>
+
   <div class="section-input ">
     <div class="heading-input">
       <h1>Input your code:</h1>

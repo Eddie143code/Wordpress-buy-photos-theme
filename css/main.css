@@ -30,6 +30,7 @@ a {
 
 * {
   box-sizing: border-box;
+  border: 1px solid black;
 }
 
 img {
@@ -70,6 +71,8 @@ li img {
 }
 
 .section_photos {
+  min-height: 96.5vh;
+  min-width: 99.9vw;
   height: auto;
 }
 
@@ -220,11 +223,11 @@ li img {
   margin-top: 5%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  justify-content: end;
+  place-items: center;
 }
 
 .cart_button {
-  grid-column: 2/3;
+  grid-column: 1/2;
 }
 
 .cart-image {
@@ -240,7 +243,6 @@ li img {
 }
 
 .container-main_products {
-  grid-column: span 4;
   margin-top: 5%;
 }
 
@@ -299,26 +301,26 @@ li img {
 }
 
 .container-photos {
-  grid-column: span 4;
-  margin: 10% auto 0 auto;
+  margin-top: 10%;
 }
 
 .photos {
   display: grid;
-  grid-template-columns: 10vw 10vw 10vw 10vw;
-  column-gap: 10vw;
+  grid-template-columns: 1fr;
   row-gap: 5vh;
 }
 
 .photos-single {
-  grid-column: span 3;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  background-color: white;
+  background-color: transparent;
+  display: grid;
+  place-items: center;
 }
 
 .img-single {
-  padding-left: 10px;
+}
+
+.photos-single button {
+  display: block;
 }
 
 .container-cart {
@@ -429,10 +431,6 @@ li img {
     width: 70vw;
   }
 
-  .photos-single {
-    grid-column: span 2;
-  }
-
   .payment_modal {
     width: 70vw;
   }
@@ -457,14 +455,6 @@ li img {
 /* big laptops */
 
 @media screen and (min-width: 900px) {
-  .container-cart_button {
-    grid-column: 2/3;
-  }
-
-  .main_products {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
   .album-link-container {
     width: 60%;
     height: 40%;
@@ -485,6 +475,14 @@ li img {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
+  .container-cart_button {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .main_products {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
   .container-other_products {
     width: 40vw;
   }
@@ -497,9 +495,11 @@ li img {
     width: 50vw;
   }
 
+  .photos {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .photos-single {
-    grid-column: span 2;
-    width: 70%;
   }
 
   .nav-header div {
@@ -513,11 +513,8 @@ li img {
 }
 
 @media screen and (min-width: 1440px) {
-  .container-single_main_product {
-  }
-
   .photos {
-    grid-template-columns: 16vw 16vw 16vw 16vw;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     column-gap: 2vw;
   }
 

@@ -1,9 +1,7 @@
-<div class=" gallery-photo">
-    <?php
+<?php
     get_header(); 
-    ?>
-
-<section id="photo-page" class="section section_photos">
+?>
+<section id="photo-page" class="section_photos gallery-photo">
 
 
     <aside class="container-cart_button">
@@ -175,5 +173,5 @@ else {
   get_footer();
 ?>
 
-</div>
+
 
